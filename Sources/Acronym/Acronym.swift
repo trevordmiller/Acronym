@@ -1,9 +1,9 @@
 struct Acronym {
     func abbreviate(phrase: String) -> String {
         var cleanedPhrase = ""
-        
+
         var previousCharacter: Character = "#"
-            
+
         for character in phrase {
             switch character {
             case "-":
@@ -13,14 +13,14 @@ struct Acronym {
             default:
                 cleanedPhrase = "\(cleanedPhrase)\(character)"
             }
-            
+
             previousCharacter = character
         }
-        
+
         let words = cleanedPhrase.split(separator: " ")
-        
+
         let initials = words.map({ $0.first?.uppercased() ?? "" })
-        
+
         return initials.joined(separator: "")
     }
 }
